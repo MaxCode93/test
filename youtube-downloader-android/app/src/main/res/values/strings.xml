@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">YouTube Downloader</string>
+    <string name="download_hint">Ingresa la URL de YouTube</string>
+    <string name="download_button">Descargar</string>
+    <string name="status_ready">Listo para descargar</string>
+    <string name="status_working">Analizando y descargando...</string>
+    <string name="status_saved">Video guardado en la carpeta Descargas</string>
+    <string name="status_error">Ocurrió un error, revisa el enlace</string>
+</resources>
