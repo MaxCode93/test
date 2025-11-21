@@ -8,6 +8,12 @@
     
     <string name="master_enable">Habilitar</string>
     <string name="master_disable">Deshabilitar</string>
+    <string name="toolbar_subtitle">Control absoluto, vista moderna</string>
+    <string name="hero_title">Protección activa</string>
+    <string name="hero_subtitle">Bloquea conexiones con una interfaz elegante y precisa.</string>
+    <string name="hero_badge">Firewall listo</string>
+    <string name="filters_title">Filtros rápidos</string>
+    <string name="filters_subtitle">Perfiles y estado</string>
 
     <!-- Menu -->
     <string name="menu_sort">Ordenar</string>
@@ -82,6 +88,7 @@
     <string name="settings_title">Ajustes</string>
     <string name="firewall_enabled">Cortafuegos habilitado</string>
     <string name="firewall_disabled">Cortafuegos deshabilitado</string>
+    <string name="settings_hero_subtitle">Personaliza cada detalle y mantén tu cortafuegos en guardia.</string>
     
     <!-- Settings Sections -->
     <string name="settings_firewall_section">Cortafuegos</string>

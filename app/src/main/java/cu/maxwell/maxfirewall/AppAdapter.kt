@@ -1,13 +1,14 @@
 package cu.maxwell.maxfirewall
 
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.DrawableCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.card.MaterialCardView
 
 class AppAdapter(
     private var appList: List<AppInfo>,
@@ -42,18 +43,20 @@ class AppAdapter(
     }
 
     inner class AppViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val card: MaterialCardView = itemView as MaterialCardView
         private val appIcon: ImageView = itemView.findViewById(R.id.image_app_icon)
         private val appName: TextView = itemView.findViewById(R.id.text_app_name)
+        private val appPackage: TextView = itemView.findViewById(R.id.text_app_package)
         private val wifiIcon: ImageView = itemView.findViewById(R.id.icon_wifi)
         private val dataIcon: ImageView = itemView.findViewById(R.id.icon_data)
-        
+
         // Color cache
         private val colorBlue = ContextCompat.getColor(itemView.context, R.color.dark_blue)
         private val colorGrey = ContextCompat.getColor(itemView.context, R.color.icon_grey_disabled)
-        private val colorWhite = Color.WHITE
-        private val colorLightGrey = ContextCompat.getColor(itemView.context, R.color.light_grey)
-        private val colorDarkGrey = ContextCompat.getColor(itemView.context, R.color.dark_grey)
-        private val colorSelectedGrey = ContextCompat.getColor(itemView.context, R.color.selected_grey)
+        private val colorOnSurface = ContextCompat.getColor(itemView.context, R.color.light_grey)
+        private val colorSelected = ContextCompat.getColor(itemView.context, R.color.selected_grey)
+        private val colorCard = ContextCompat.getColor(itemView.context, R.color.card_surface)
+        private val colorAccent = ContextCompat.getColor(itemView.context, R.color.neon_cyan)
 
 
         init {
@@ -87,38 +90,45 @@ class AppAdapter(
         fun bind(appInfo: AppInfo) {
             appIcon.setImageDrawable(appInfo.appIcon)
             appName.text = appInfo.appName
+            appPackage.text = appInfo.packageName
 
             if (appInfo.isSelected) {
-                // --- SELECTED STATE ---
-                itemView.setBackgroundColor(colorSelectedGrey)
-                appName.setTextColor(colorWhite)
+                card.setCardBackgroundColor(colorSelected)
+                card.strokeWidth = itemView.resources.getDimensionPixelSize(R.dimen.card_stroke_width)
+                card.strokeColor = colorAccent
+                appName.setTextColor(colorOnSurface)
+                appPackage.setTextColor(colorOnSurface)
 
-                // Set icons to white for contrast
                 wifiIcon.setImageResource(R.drawable.ic_wifi)
-                wifiIcon.setColorFilter(colorWhite)
-                
-                dataIcon.setImageResource(R.drawable.ic_data)
-                dataIcon.setColorFilter(colorWhite)
-                
-            } else {
-                // --- DEFAULT STATE ---
-                itemView.setBackgroundColor(colorDarkGrey)
-                appName.setTextColor(colorLightGrey)
+                wifiIcon.setColorFilter(colorOnSurface)
+                DrawableCompat.setTint(DrawableCompat.wrap(wifiIcon.background), colorAccent)
 
-                // Set Wi-Fi icon state (Blue if allowed, Grey if blocked)
+                dataIcon.setImageResource(R.drawable.ic_data)
+                dataIcon.setColorFilter(colorOnSurface)
+                DrawableCompat.setTint(DrawableCompat.wrap(dataIcon.background), colorAccent)
+
+            } else {
+                card.setCardBackgroundColor(colorCard)
+                card.strokeWidth = 0
+                appName.setTextColor(colorOnSurface)
+                appPackage.setTextColor(colorGrey)
+
                 wifiIcon.setImageResource(R.drawable.ic_wifi)
                 if (appInfo.isWifiBlocked) {
                     wifiIcon.setColorFilter(colorGrey)
+                    DrawableCompat.setTint(DrawableCompat.wrap(wifiIcon.background), colorSelected)
                 } else {
                     wifiIcon.setColorFilter(colorBlue)
+                    DrawableCompat.setTint(DrawableCompat.wrap(wifiIcon.background), colorAccent)
                 }
 
-                // Set Data icon state (Blue if allowed, Grey if blocked)
                 dataIcon.setImageResource(R.drawable.ic_data)
                 if (appInfo.isDataBlocked) {
                     dataIcon.setColorFilter(colorGrey)
+                    DrawableCompat.setTint(DrawableCompat.wrap(dataIcon.background), colorSelected)
                 } else {
                     dataIcon.setColorFilter(colorBlue)
+                    DrawableCompat.setTint(DrawableCompat.wrap(dataIcon.background), colorAccent)
                 }
             }
         }
