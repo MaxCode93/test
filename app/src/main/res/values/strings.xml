@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">maxFirewall</string>
+
+    <!-- Main Activity -->
+    <string name="mode_vpn">VPN</string>
+    <string name="loading_apps">Cargando aplicaciones…</string>
+    
+    <string name="master_enable">Habilitar</string>
+    <string name="master_disable">Deshabilitar</string>
+
+    <!-- Menu -->
+    <string name="menu_sort">Ordenar</string>
+    <string name="menu_search">Buscar</string>
+    <string name="search_hint">Buscar aplicaciones...</string>
+    <string name="menu_refresh">Actualizar</string>
+    <string name="menu_reboot_reminder">Recordatorio después de reiniciar</string>
+    <string name="menu_help">Ayuda y más</string>
+    
+    <!-- Import/Export -->
+    <string name="menu_export">Exportar configuración</string>
+    <string name="menu_import">Importar configuración</string>
+    <string name="export_success">Configuración exportada exitosamente</string>
+    <string name="export_failed">La exportación falló</string>
+    <string name="import_success">Configuración importada exitosamente</string>
+    <string name="import_failed">La importación falló. ¿Archivo inválido?</string>
+    <string name="backup_file_name">copia_seguridad_cortafuegos.json</string>
+
+    <!-- Sort Options -->
+    <string name="sort_dialog_title">Ordenar y filtrar</string>
+    <string name="sort_filter_by">Filtrar por:</string>
+    <string name="sort_by_name">Ordenar por nombre</string>
+    <string name="sort_show_system">Mostrar aplicaciones del sistema</string>
+    <string name="sort_show_user">Mostrar aplicaciones de usuario</string>
+    <string name="sort_show_internet">Mostrar solo aplicaciones con internet</string>
+    <string name="sort_show_blocked">Mostrar bloqueadas primero</string>
+
+    <!-- Filter Chips -->
+    <string name="filter_all">Todas</string>
+    <string name="filter_user">Usuario</string>
+    <string name="filter_system">Sistema</string>
+    <string name="filter_internet">Internet</string>
+    <string name="filter_allowed">Permitidas</string>
+    <string name="filter_blocked">Bloqueadas</string>
+
+    <!-- Selection Menu -->
+    <string name="menu_select_all">Seleccionar todo</string>
+    <string name="selection_title_zero">Seleccionar elementos</string>
+    <string name="selection_title_one">1 seleccionada</string>
+    <string name="selection_title_many">%d seleccionadas</string>
+
+    <!-- Help Activity -->
+    <string name="help_title">Ayuda y más</string>
+    <string name="help_intro">Esta app te permite bloquear el acceso a internet para tus aplicaciones utilizando un servicio VPN local sin necesidad de acceso root.</string>
+    <string name="help_vpn_title">Cómo funciona</string>
+    <string name="help_vpn_desc">Este modo ejecuta un servicio VPN local en tu teléfono. Todo el tráfico de las aplicaciones pasa a través de este servicio, que bloquea las conexiones para las aplicaciones que selecciones. Este modo debe estar ejecutándose constantemente para funcionar.</string>
+    <string name="help_usage_title">Instrucciones</string>
+    <string name="help_usage_desc">El cortafuegos está DESHABILITADO por defecto.\n\n1. Presiona el botón \"Habilitar\" en la pantalla principal para iniciar el cortafuegos.\n\n2. Toca los iconos de Wi-Fi o datos junto a una aplicación para bloquear o permitir su acceso a internet.\n\nDespués de un reinicio, debes abrir esta app para volver a aplicar tu configuración. Presiona el botón de actualizar en la app, habilita/deshabilita o borra la caché y fuerza el cierre y reinicia para solucionar problemas.</string>
+    <string name="help_donate_button">Donar Bitcoin</string>
+    <string name="help_donate_toast">Dirección de Bitcoin copiada al portapapeles</string>
+
+    <!-- Reboot Reminder Notification -->
+    <string name="notification_permission_required">Se requiere permiso de notificación para mostrar recordatorios después del reinicio.</string>
+    <string name="reboot_notification_channel_name">Recordatorios de reinicio</string>
+    <string name="reboot_notification_title">Reglas del cortafuegos reiniciadas</string>
+    <string name="reboot_notification_text">Toca para abrir maxFirewall y volver a aplicar tus reglas.</string>
+
+    <!-- Content Descriptions (for accessibility) -->
+    <string name="content_desc_app_icon">Icono de la aplicación</string>
+    <string name="content_desc_wifi_toggle">Cambiar acceso Wi-Fi</string>
+    <string name="content_desc_data_toggle">Cambiar acceso de datos móviles</string>
+    <string name="content_desc_back_arrow">Atrás</string>
+
+    <!-- Bottom Navigation -->
+    <string name="nav_firewall">Cortafuegos</string>
+    <string name="nav_settings">Ajustes</string>
+    <string name="nav_info">Información</string>
+    <string name="menu_info">Info</string>
+    <string name="menu_firewall">Firewall</string>
+
+    <!-- Settings Activity -->
+    <string name="settings_title">Ajustes</string>
+    <string name="firewall_enabled">Cortafuegos habilitado</string>
+    <string name="firewall_disabled">Cortafuegos deshabilitado</string>
+    
+    <!-- Settings Sections -->
+    <string name="settings_firewall_section">Cortafuegos</string>
+    <string name="settings_notifications_section">Notificaciones</string>
+    <string name="settings_data_section">Datos y Privacidad</string>
+    
+    <!-- Settings Options -->
+    <string name="settings_enable_firewall">Habilitar cortafuegos</string>
+    <string name="settings_enable_firewall_desc">Activa o desactiva el servicio de cortafuegos VPN</string>
+    <string name="settings_reboot_reminder">Recordatorio después de reiniciar</string>
+    <string name="settings_reboot_reminder_desc">Recibe una notificación para reaplicar las reglas después del reinicio</string>
+    <string name="settings_export">Exportar configuración</string>
+    <string name="settings_export_desc">Guarda tu configuración en un archivo JSON</string>
+    <string name="settings_import">Importar configuración</string>
+    <string name="settings_import_desc">Restaura la configuración desde un archivo JSON</string>
+
+    <!-- Info Activity -->
+    <string name="info_title">Información</string>
+    <string name="info_version_default">Versión 1.0</string>
+    <string name="info_version">Versión %1$s (Build %2$d)</string>
+    <string name="info_about_section">Acerca de</string>
+    <string name="info_description_title">Descripción</string>
+    <string name="info_description">maxFirewall es una aplicación de cortafuegos moderno y eficiente que te permite bloquear el acceso a internet para aplicaciones específicas usando un servicio VPN local, sin necesidad de acceso root.</string>
+    <string name="info_links_section">Enlaces</string>
+    <string name="info_github">Código fuente</string>
+    <string name="info_github_desc">Ver el repositorio en GitHub</string>
+    <string name="info_license">Licencia</string>
+    <string name="info_license_desc">Apache License 2.0</string>
+    <string name="info_license_full_text">Apache License
+Version 2.0, January 2004
+
+Este software se proporciona bajo la Licencia Apache 2.0. Para más información, visita: http://www.apache.org/licenses/LICENSE-2.0</string>
+</resources>
+
+

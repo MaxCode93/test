@@ -1,0 +1,54 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme for night mode. -->
+    <style name="Theme.MaxFirewall" parent="Theme.Material3.Dark.NoActionBar">
+        
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/dark_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Material color tokens mapped to app colors -->
+        <item name="colorBackground">@color/dark_grey</item>
+        <item name="colorSurface">@color/dark_grey</item>
+        <item name="colorOnSurface">@color/light_grey</item>
+        <item name="colorSurfaceVariant">@color/selected_grey</item>
+        <item name="colorOnSurfaceVariant">@color/light_grey</item>
+        <item name="colorOutline">@color/icon_grey_disabled</item>
+
+        <!-- Status bar & window background -->
+        <item name="android:statusBarColor">@color/dark_grey</item>
+        <item name="android:windowBackground">@color/dark_grey</item>
+
+        <!-- Default text color -->
+        <item name="android:textColor">@color/light_grey</item>
+
+        <!-- Set toolbar style -->
+        <item name="toolbarStyle">@style/Widget.App.Toolbar</item>
+
+        <!-- Set default button style -->
+        <item name="materialButtonStyle">@style/Widget.App.Button</item>
+    </style>
+
+    <style name="Widget.App.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/dark_grey</item>
+        <item name="titleTextColor">@color/light_grey</item>
+        <item name="subtitleTextColor">@color/light_grey</item>
+    </style>
+
+    <!-- Default button style -->
+    <style name="Widget.App.Button" parent="Widget.Material3.Button">
+        <item name="android:backgroundTint">@color/dark_blue</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- Donate button style -->
+    <style name="Widget.App.Button.Donate" parent="Widget.Material3.Button">
+        <item name="android:backgroundTint">@color/light_orange_donate</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!-- Bottom Navigation View Style -->
+    <style name="BottomNavigationViewStyle" parent="Widget.Material3.BottomNavigationView">
+        <item name="android:background">@color/dark_grey</item>
+        <item name="android:elevation">8dp</item>
+    </style>
+</resources>
