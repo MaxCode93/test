@@ -12,6 +12,8 @@ class FirewallPreferences(context: Context) {
         
     private val defaultPrefs: SharedPreferences =
         context.getSharedPreferences("default_prefs", Context.MODE_PRIVATE)
+
+    private val DEFAULT_PREFS_KEY = "defaults"
         
     private val TAG = "FirewallPreferences"
 
@@ -89,6 +91,17 @@ class FirewallPreferences(context: Context) {
         return defaultPrefs.getBoolean("reboot_reminder_enabled", false)
     }
 
+    // --- Theme Mode ---
+
+    fun setThemeMode(themeMode: ThemeMode) {
+        defaultPrefs.edit().putString("theme_mode", themeMode.storageValue).apply()
+    }
+
+    fun getThemeMode(): ThemeMode {
+        val storedValue = defaultPrefs.getString("theme_mode", ThemeMode.SYSTEM.storageValue)
+        return ThemeMode.fromStorage(storedValue)
+    }
+
     // --- Filter Chips ---
     
     fun setFilterChipState(chipId: String, isChecked: Boolean) {
@@ -137,14 +150,24 @@ class FirewallPreferences(context: Context) {
     fun exportAllSettings(): String? {
         return try {
             val masterJson = JSONObject()
-            
+
             val vpnJson = JSONObject()
             vpnPrefs.all.forEach { (key, value) ->
                 vpnJson.put(key, value)
             }
-            
+
             masterJson.put(FirewallMode.VPN.key, vpnJson)
-            
+
+            val defaultJson = JSONObject()
+            defaultPrefs.all.forEach { (key, value) ->
+                when (value) {
+                    is Boolean -> defaultJson.put(key, value)
+                    is String -> defaultJson.put(key, value)
+                }
+            }
+
+            masterJson.put(DEFAULT_PREFS_KEY, defaultJson)
+
             masterJson.toString(2) // Indent for readability
         } catch (e: Exception) {
             Log.e(TAG, "Error exporting settings", e)
@@ -165,7 +188,19 @@ class FirewallPreferences(context: Context) {
                 vpnEditor.putBoolean(key, vpnJson.getBoolean(key))
             }
             vpnEditor.commit()
-            
+
+            if (masterJson.has(DEFAULT_PREFS_KEY)) {
+                val defaultJson = masterJson.getJSONObject(DEFAULT_PREFS_KEY)
+                val defaultEditor = defaultPrefs.edit().clear()
+                defaultJson.keys().forEach { key ->
+                    when (val value = defaultJson.get(key)) {
+                        is Boolean -> defaultEditor.putBoolean(key, value)
+                        is String -> defaultEditor.putString(key, value)
+                    }
+                }
+                defaultEditor.commit()
+            }
+
             true
         } catch (e: Exception) {
             Log.e(TAG, "Error importing settings", e)

@@ -86,6 +86,7 @@
     <!-- Settings Sections -->
     <string name="settings_firewall_section">Cortafuegos</string>
     <string name="settings_notifications_section">Notificaciones</string>
+    <string name="settings_appearance_section">Apariencia</string>
     <string name="settings_data_section">Datos y Privacidad</string>
     
     <!-- Settings Options -->
@@ -97,6 +98,11 @@
     <string name="settings_export_desc">Guarda tu configuración en un archivo JSON</string>
     <string name="settings_import">Importar configuración</string>
     <string name="settings_import_desc">Restaura la configuración desde un archivo JSON</string>
+    <string name="settings_theme">Tema de la app</string>
+    <string name="settings_theme_desc">Elige entre tema automático, claro u oscuro</string>
+    <string name="theme_system">Automático</string>
+    <string name="theme_light">Claro</string>
+    <string name="theme_dark">Oscuro</string>
 
     <!-- Info Activity -->
     <string name="info_title">Información</string>

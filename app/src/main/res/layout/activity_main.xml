@@ -5,21 +5,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark_grey"
+    android:background="?attr/colorBackground"
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/dark_grey"
+        android:background="?attr/colorSurface"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:titleTextColor="@color/light_grey"
+            app:titleTextColor="?attr/colorOnSurface"
             app:title=""> <!-- This is intentionally blank to remove title -->
 
             <!-- LinearLayout to hold button -->
@@ -69,7 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/loading_apps"
-            android:textColor="@color/light_grey"
+            android:textColor="?attr/colorOnSurface"
             android:textSize="16sp"
             android:layout_marginTop="8dp"/>
 
@@ -177,7 +177,7 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/dark_grey"
+        android:background="?attr/colorSurface"
         android:elevation="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
