@@ -7,11 +7,11 @@
 
         <item name="colorBackground">@color/dark_grey</item>
         <item name="colorOnBackground">@color/light_grey</item>
-        <item name="colorSurface">@color/dark_grey</item>
+        <item name="colorSurface">@color/card_surface</item>
         <item name="colorOnSurface">@color/light_grey</item>
-        <item name="colorSurfaceVariant">@color/selected_grey</item>
+        <item name="colorSurfaceVariant">@color/card_surface_alt</item>
         <item name="colorOnSurfaceVariant">@color/light_grey</item>
-        <item name="colorOutline">@color/icon_grey_disabled</item>
+        <item name="colorOutline">@color/chip_outline</item>
 
         <item name="android:statusBarColor">@color/dark_grey</item>
         <item name="android:navigationBarColor">@color/dark_grey</item>
@@ -19,11 +19,12 @@
 
         <item name="toolbarStyle">@style/Widget.App.Toolbar</item>
         <item name="materialButtonStyle">@style/Widget.App.Button</item>
+        <item name="materialCardViewStyle">@style/Widget.App.Card</item>
         <item name="bottomNavigationStyle">@style/BottomNavigationViewStyle</item>
     </style>
 
     <style name="Widget.App.Toolbar" parent="Widget.Material3.Toolbar">
-        <item name="android:background">@color/dark_grey</item>
+        <item name="android:background">@android:color/transparent</item>
         <item name="titleTextColor">@color/light_grey</item>
         <item name="subtitleTextColor">@color/light_grey</item>
     </style>
@@ -31,6 +32,7 @@
     <style name="Widget.App.Button" parent="Widget.Material3.Button">
         <item name="android:backgroundTint">?attr/colorPrimary</item>
         <item name="android:textColor">@color/white</item>
+        <item name="cornerRadius">16dp</item>
     </style>
 
     <style name="Widget.App.Button.Donate" parent="Widget.Material3.Button">
@@ -38,9 +40,15 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="Widget.App.Card" parent="Widget.Material3.CardView">
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">4dp</item>
+    </style>
+
     <style name="BottomNavigationViewStyle" parent="Widget.Material3.BottomNavigationView">
         <item name="android:background">@color/dark_grey</item>
-        <item name="android:elevation">8dp</item>
+        <item name="android:elevation">10dp</item>
+        <item name="itemRippleColor">@color/neon_cyan</item>
     </style>
 
     <style name="Widget.Material3.Chip.Filter" parent="Widget.Material3.Chip.Filter">
